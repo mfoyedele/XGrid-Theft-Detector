@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XGrid Theft Predictor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container mt-4">
+    <h2 class="text-center mb-3 text-primary">⚡ XGrid Theft Detection</h2>
+
+    <form action="/predict" method="post" enctype="multipart/form-data" class="border p-4 bg-white shadow rounded">
+        <!-- Manual Entry Inputs -->
+        <div class="mb-1">
+            <h5>📝 Enter 9 Daily Feature Readings</h5>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="energy_mean" placeholder="Energy Mean (e.g., 0.0)">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="energy_std" placeholder="Energy Std Dev (e.g., 0.0)">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="energy_max" placeholder="Energy Max (e.g., 0.0)">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="energy_min" placeholder="Energy Min (e.g., 0.0)">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="energy_range" placeholder="Energy Range (e.g., 0.0)">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="energy_freq_mean" placeholder="Energy Freq Mean (e.g., 0.0)">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="energy_freq_std" placeholder="Energy Freq Std Dev (e.g., 0.0)">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="energy_freq_max" placeholder="Energy Freq Max (e.g., 0.0)">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="energy_freq_min" placeholder="Energy Freq Min (e.g., 0.0)">
+                </div>
+            </div>
+
+            <div class="d-grid mt-3">
+                <button type="submit" class="btn btn-success">🚀 Predict Manually</button>
+            </div>
+        </div>
+
+        <!-- Separator -->
+        <div class="text-center text-muted my-2">— or —</div>
+</form>
+
+    <form action="/predict" method="post" enctype="multipart/form-data" class="border p-4 bg-white shadow rounded">
+
+        <!-- File Upload Section -->
+        <div class="mb-1">
+            <label for="file" class="form-label">📁 Upload CSV or Excel File</label>
+            <input type="file" class="form-control" name="file" id="file" accept=".csv, .xlsx">
+            <div class="form-text">Include columns: energy_mean, std, min, freq_mean, etc.</div>
+        </div>
+
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary">📤 Upload and Predict</button>
+        </div>
+
+    </form>
+</div>
+</body>
+</html>
+
