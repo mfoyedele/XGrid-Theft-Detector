@@ -3,10 +3,11 @@ import numpy as np
 import pandas as pd
 import xgboost as xgb
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 import pickle
 
 # Loading the dataset
-df = pd.read_csv('/data/features/selected_features.csv')
+df = pd.read_csv('data/processed/extract_features_data.csv')
 
 # Model Building
 # Drop rows with missing target
@@ -32,16 +33,14 @@ X_test = sc.transform(X_test)
 # Define the XGBoost model
 classifier = xgb.XGBClassifier(
     subsample=0.8,
-    scale_pos_weight=np.float64(10.720954356846473),
+    scale_pos_weight=1,
     n_estimators=300,
-    max_depth=10,
-    learning_rate=0.05,
-    gamma=0,
-    colsample_bytree=0.8,
-    use_label_encoder=False,  
-    eval_metric='logloss'     
+    max_depth=7,
+    learning_rate=0.1,
+    gamma=0.3,
+    colsample_bytree=0.6,
+    eval_metric='logloss'
 )
-
 
 classifier.fit(X_train, y_train)
 
