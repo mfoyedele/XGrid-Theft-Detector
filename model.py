@@ -1,15 +1,13 @@
-# Importing essential libraries
 import numpy as np
 import pandas as pd
 import xgboost as xgb
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-import pickle
+import joblib  # Use joblib for saving/loading models
 
-# Loading the dataset
+# Load dataset
 df = pd.read_csv('data/processed/extract_features_data.csv')
 
-# Model Building
 # Drop rows with missing target
 df = df.dropna(subset=["FLAG"])
 
@@ -25,10 +23,10 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, stratify=y, random_state=42
 )
 
+# Initialize and fit scaler on training data
 sc = StandardScaler()
-X_train = sc.fit_transform(X_train)
-X_test = sc.transform(X_test)
-
+X_train_scaled = sc.fit_transform(X_train)
+X_test_scaled = sc.transform(X_test)
 
 # Define the XGBoost model
 classifier = xgb.XGBClassifier(
@@ -39,11 +37,22 @@ classifier = xgb.XGBClassifier(
     learning_rate=0.1,
     gamma=0.3,
     colsample_bytree=0.6,
-    eval_metric='logloss'
+    eval_metric='logloss',
+    use_label_encoder=False,
+    random_state=42
 )
 
-classifier.fit(X_train, y_train)
+# Train the model
+classifier.fit(X_train_scaled, y_train)
 
-# Creating a pickle file for the classifier
-filename = 'xgrid-theft-prediction-model.pkl'
-pickle.dump(classifier, open(filename, 'wb'))
+# Evaluate model performance before saving
+from sklearn.metrics import classification_report
+y_pred = classifier.predict(X_test_scaled)
+print(classification_report(y_test, y_pred))
+
+# Save model and scaler to disk for later use
+joblib.dump(classifier, 'xgrid-theft-prediction-model.pkl')
+joblib.dump(sc, 'scaler.pkl')
+
+print("Model and scaler saved successfully.")
+
