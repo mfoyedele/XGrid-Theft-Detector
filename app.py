@@ -67,7 +67,7 @@ def predict():
 
             scaled_data = scaler.transform(data)
             prediction = classifier.predict(scaled_data)[0]
-            label = "Theft" if prediction == 1 else "Faithful"
+            label = "Theft" if prediction == 1 else "Non-theft"
 
             return render_template("result.html", result=label)
 
@@ -103,7 +103,7 @@ def predict():
             features = df[expected_columns[1:]]
             features_scaled = scaler.transform(features)
             preds = classifier.predict(features_scaled)
-            df['Prediction'] = ['Theft' if p == 1 else 'Faithful' for p in preds]
+            df['Prediction'] = ['Theft' if p == 1 else 'Non-theft' for p in preds]
 
             # Save result to CSV
             result_filename = f"prediction_results_{timestamp}.csv"
