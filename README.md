@@ -37,9 +37,9 @@ XGrid/
 ├── model.py                  # ML training and evaluation
 ├── data                      # ML selected extract features jupyter notebook and SGCC dataset
 ├── assets                    # App images
-├── csv_test_files            # Contains csv files for testing
-├── excel_test_files          # Contains excel files for testing
-├── notebooks                 # Contains ML jupyter notebooks
+├── csv_test_files            # Csv files for testing
+├── excel_test_files          # Excel files for testing
+├── notebooks                 # ML jupyter notebooks
 ├── templates/
 │   ├── index.html
 │   └── result.html
