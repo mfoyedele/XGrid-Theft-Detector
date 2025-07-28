@@ -35,6 +35,10 @@ XGrid/
 │
 ├── app.py                    # Flask web server
 ├── model.py                  # ML training and evaluation
+├── assets                    # App images
+├── csv_test_files            # Contains csv files for testing
+├── excel_test_files          # Contains excel files for testing
+├── notebooks                 # Contains ML jupyter notebooks
 ├── templates/
 │   ├── index.html
 │   └── result.html
