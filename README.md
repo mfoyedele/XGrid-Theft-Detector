@@ -4,7 +4,8 @@
 **Smart AI-powered Electricity Theft Detection Web App**
 
 XGrid Theft Detector is an open-source AI solution that helps identify electricity theft using machine learning models trained on historical energy usage patterns. It enables users to either manually input data or upload datasets (CSV/Excel) and get instant predictions.
-
+![alt text](https://github.com/mfoyedele/XGrid-Theft-Detector/blob/main/assets/xgrid_homepage.png?raw=true)
+![alt text](https://github.com/mfoyedele/XGrid-Theft-Detector/blob/main/assets/xgrid_prediction.png?raw=true)
 ---
 
 ## 🚀 Features
