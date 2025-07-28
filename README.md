@@ -35,6 +35,7 @@ XGrid/
 │
 ├── app.py                    # Flask web server
 ├── model.py                  # ML training and evaluation
+├── data                      # ML selected extract features jupyter notebook and SGCC dataset
 ├── assets                    # App images
 ├── csv_test_files            # Contains csv files for testing
 ├── excel_test_files          # Contains excel files for testing
