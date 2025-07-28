@@ -117,7 +117,7 @@ MIT License
 
 ---
 
-## 👥 Contributors
+## Contributors
 
 - Musa Funso Oyedele – [@mfoyedele](https://github.com/mfoyedele)
 - Open to contributors!
