@@ -9,17 +9,17 @@ XGrid Theft Detector is an open-source AI solution that helps identify electrici
 ![alt text](https://github.com/mfoyedele/XGrid-Theft-Detector/blob/main/assets/xgrid_homepage.png?raw=true)
 ![alt text](https://github.com/mfoyedele/XGrid-Theft-Detector/blob/main/assets/xgrid_prediction.png?raw=true)
 ---
-## 🚀 Features
+## Features
 
-- 🔍 Predict **Theft vs Non-Theft** based on 9 extracted features
-- 📁 Upload `.csv` or `.xlsx` files for **batch predictions**
-- 📦 Download predictions in a **ZIP archive**
-- 📊 View summaries and top predictions on the web
-- 🧠 Powered by **XGBoost** with `StandardScaler` preprocessing
+- Predict **Theft vs Non-Theft** based on 9 extracted features
+- Upload `.csv` or `.xlsx` files for **batch predictions**
+- Download predictions in a **ZIP archive**
+- View summaries and top predictions on the web
+- Powered by **XGBoost** with `StandardScaler` preprocessing
 
 ---
 
-## 🧠 How It Works
+## How It Works
 
 1. **Extract Features** from energy readings (e.g., mean, std, max, FFT stats)
 2. **Preprocess** using StandardScaler
@@ -28,7 +28,7 @@ XGrid Theft Detector is an open-source AI solution that helps identify electrici
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 XGrid/
@@ -51,7 +51,7 @@ XGrid/
 
 ---
 
-## 📥 Requirements
+## Requirements
 
 - Python 3.7+
 - Flask
@@ -69,7 +69,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🔧 Running the App Locally
+## Running the App Locally
 
 ```bash
 python app.py
@@ -79,7 +79,7 @@ Then visit [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
 ---
 
-## 📈 Training Your Own Model
+## Training Your Own Model
 
 If you want to retrain:
 
@@ -93,7 +93,7 @@ It will generate:
 
 ---
 
-## 📌 Inputs Required
+## Inputs Required
 
 Whether through form or file, you need the following 9 features:
 
